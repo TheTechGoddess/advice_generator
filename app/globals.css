@@ -2,26 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  body {
+    @apply font-[Manrope];
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+:root {
+  background-color: #202733;
+}
+
+.hover-effect:hover {
+  content: "";
+  background-color: #53ffaa;
+  box-shadow: 0px 0px 40px 0px #53ffaa;
+  z-index: 2;
+}
+
+/* Home.css */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-circle {
+  width: 100px; /* Adjust the size of the circle */
+  height: 100px; /* Adjust the size of the circle */
+  border-radius: 50%;
+  border: 4px solid #cee3e9; /* Border color */
+  border-top: 4px solid transparent; /* Transparent top border */
+  animation: rotateText 1s linear infinite;
+  font-weight: bold;
+  margin: 0 auto;
 }
