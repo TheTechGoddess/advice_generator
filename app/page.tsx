@@ -5,13 +5,13 @@ import pause from "@/public/assets/pause.svg";
 import dice from "@/public/assets/dice.svg";
 import axios from "axios";
 
-export default function Home() {
-  type AdviceData = {
-    id: number | null;
-    text: string;
-  };
+interface Advice {
+  id: number | null;
+  advice: string;
+}
 
-  const [advice, setAdvice] = useState({ id: null, text: "" });
+export default function Home() {
+  const [advice, setAdvice] = useState<Advice>({ id: null, advice: "" });
   const [loading, setLoading] = useState(true); // Initialize loading state to true
 
   const fetchData = async () => {
@@ -28,7 +28,7 @@ export default function Home() {
       } finally {
         setLoading(false); // Set loading to false whether the request succeeds or fails
       }
-    }, 2000); // 2-second delay
+    }, 1000); // 2-second delay
   };
 
   useEffect(() => {
