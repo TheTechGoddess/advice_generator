@@ -42,9 +42,9 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+    <main className="flex min-h-screen flex-col items-center justify-center md:p-24 p-10">
       {/* body */}
-      <div className="bg-[#313A48] w-[540px] h-[332px] p-8 rounded-lg flex flex-col items-center justify-center">
+      <div className="bg-[#313A48] w-[350px] md:w-[540px] md:h-[332px] p-8 rounded-lg flex flex-col items-center justify-center">
         {/* Show loading indicator while fetching data */}
         {loading ? (
           <svg
@@ -80,16 +80,16 @@ export default function Home() {
               “{advice.advice}”
             </p>
             <div className="flex justify-between my-4">
-              <hr className="w-48 h-[2px] mt-1.5 border-0 bg-[#4F5D74]" />
-              <Image src={pause} alt="pause" className="mx-6" />
-              <hr className="w-48 h-[2px] mt-1.5 border-0 bg-[#4F5D74]" />
+              <hr className="w-28 md:w-48 h-[2px] mt-1.5 border-0 bg-[#4F5D74]" />
+              <Image src={pause} alt="pause" className="mx-4" />
+              <hr className="w-28 md:w-48 h-[2px] mt-1.5 border-0 bg-[#4F5D74] " />
             </div>
           </>
         )}
       </div>
       {/* dice */}
       <div
-        className="-mt-[34px] h-16 w-16 bg-[#53FFAA] flex justify-center items-center rounded-full cursor-pointer hover-effect"
+        className="-mt-[34px] h-16 ml-1.5 w-16 bg-[#53FFAA] flex justify-center items-center rounded-full cursor-pointer hover-effect"
         onClick={handleDiceClick}
       >
         <Image src={dice} alt="dice" />
