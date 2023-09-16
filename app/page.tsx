@@ -47,29 +47,31 @@ export default function Home() {
       <div className="bg-[#313A48] w-[350px] md:w-[540px] md:h-[332px] p-8 rounded-lg flex flex-col items-center justify-center">
         {/* Show loading indicator while fetching data */}
         {loading ? (
-          <svg
-            viewBox="0 0 100 100"
-            xmlns="http://www.w3.org/2000/svg"
-            width="100"
-            height="100"
-            style={{ fill: "#313A48" }}
-          >
-            <path
-              id="circlePath"
-              d="M 10, 50 a 40,40 0 1,1 80,0 40,40 0 1,1 -80,0"
-            />
-            <text
-              fontSize="20"
-              fontWeight="bold"
-              textAnchor="middle"
-              fill="#000000"
-              dy="0.35em"
+          <div className="mb-8">
+            <svg
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+              width="100"
+              height="100"
+              style={{ fill: "#313A48" }}
             >
-              <textPath href="#circlePath">
-                😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒
-              </textPath>
-            </text>
-          </svg>
+              <path
+                id="circlePath"
+                d="M 10, 50 a 40,40 0 1,1 80,0 40,40 0 1,1 -80,0"
+              />
+              <text
+                fontSize="20"
+                fontWeight="bold"
+                textAnchor="middle"
+                fill="#000000"
+                dy="0.35em"
+              >
+                <textPath href="#circlePath">
+                  😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒
+                </textPath>
+              </text>
+            </svg>
+          </div>
         ) : (
           // Render advice when data is available
           <>
